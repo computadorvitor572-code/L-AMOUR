@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'AMOUR | Pet Shop & Estética Animal</title>
+  <meta name="description" content="L'AMOUR Pet Shop - O lugar preferido do seu pet. Especialistas em estética animal, banho, tosa, rações e acessórios. Agende pelo telefone (63) 99258-4940.">
+  
+  <!-- Fontes Google: Playfair Display (Serif Elegante) & Plus Jakarta Sans (Moderna e legível) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO / HEADER -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo" aria-label="L'AMOUR Pet Shop Início">
+        <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="19" stroke="#E5A629" stroke-width="2"/>
+          <path d="M14 26C14 26 13 22 17 19C17 19 14.5 15.5 17.5 13C20.5 10.5 22.5 13.5 22.5 13.5C22.5 13.5 25.5 10.5 28.5 13C31.5 15.5 29 19 29 19C33 22 32 26 32 26" stroke="#E5A629" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="17.5" cy="18.5" r="1.5" fill="#E5A629"/>
+          <circle cx="28.5" cy="18.5" r="1.5" fill="#E5A629"/>
+          <path d="M20.5 21L23 23.5L25.5 21" stroke="#E5A629" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title">L'AMOUR</span>
+          <span class="brand-subtitle">PET SHOP</span>
+        </div>
+      </a>
+
+      <!-- Menu Desktop -->
+      <nav class="desktop-nav" aria-label="Navegação Principal">
+        <ul class="nav-links">
+          <li><a href="#hero" class="active">Início</a></li>
+          <li><a href="#servicos">Estética Animal</a></li>
+          <li><a href="#processo">Como Cuidamos</a></li>
+          <li><a href="#sobre">Nossa Equipe</a></li>
+          <li><a href="#depoimentos">Avaliações</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://wa.me/5563992584940?text=Ol%C3%A1!+Gostaria+de+agendar+um+hor%C3%A1rio+na+L'AMOUR+Pet+Shop." target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-cta">
+          Agendar Horário
+        </a>
+
+        <!-- Botão Menu Hamburguer Mobile -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu de navegação">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navegação Mobile Drawer -->
+    <div class="mobile-menu-drawer" id="mobileDrawer">
+      <div class="drawer-header">
+        <div class="brand-text">
+          <span class="brand-title">L'AMOUR</span>
+          <span class="brand-subtitle">PET SHOP</span>
+        </div>
+        <button class="drawer-close" id="drawerClose" aria-label="Fechar menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="#hero" class="mobile-link">Início</a></li>
+        <li><a href="#servicos" class="mobile-link">Estética Animal</a></li>
+        <li><a href="#processo" class="mobile-link">Como Cuidamos</a></li>
+        <li><a href="#sobre" class="mobile-link">Nossa Equipe</a></li>
+        <li><a href="#depoimentos" class="mobile-link">Avaliações</a></li>
+        <li><a href="#contato" class="mobile-link">Contato</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <p class="drawer-phone">Atendimento: <strong>(63) 99258-4940</strong></p>
+        <p class="drawer-address">604 Norte - Palmas, TO</p>
+        <a href="https://wa.me/5563992584940?text=Ol%C3%A1!+Gostaria+de+agendar+um+hor%C3%A1rio+na+L'AMOUR+Pet+Shop." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-backdrop-glow"></div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="hero-tagline">O lugar preferido do seu pet</span>
+          <h1 class="hero-title">O cuidado e a dedicação que o seu melhor amigo merece</h1>
+          <p class="hero-description">
+            Cuidamos com paciência, amor e produtos de alta linha. Estética animal especializada, banho relaxante, tosa com técnica e respeito integral ao bem-estar do seu pet.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="https://wa.me/5563992584940?text=Ol%C3%A1!+Vim+pelo+site+e+quero+agendar+um+hor%C3%A1rio+para+o+meu+pet." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Agendar Horário
+            </a>
+            <a href="#servicos" class="btn btn-outline">
+              Conhecer Serviços
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <div class="meta-item">
+              <span class="meta-highlight">Estética Animal</span>
+              <span class="meta-label">Banhos e tosas sem estresse</span>
+            </div>
+            <div class="meta-divider"></div>
+            <div class="meta-item">
+              <span class="meta-highlight">604 Norte</span>
+              <span class="meta-label">Fácil acesso em Palmas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-wrapper">
+            <!-- Efeito de moldura luminosa sofisticada similar à imagem de referência -->
+            <div class="visual-decorations">
+              <div class="sparkle sparkle-1"></div>
+              <div class="sparkle sparkle-2"></div>
+              <div class="sparkle sparkle-3"></div>
+              <div class="ring-decor"></div>
+            </div>
+            <img 
+              src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=900&q=80" 
+              alt="Cachorro saudável e feliz recebendo cuidados na L'AMOUR" 
+              class="hero-main-img"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAIXA DOURADA COM GALERIA DE PETS (Estilo Banner Amarelo da Imagem 2) -->
+    <section class="pets-banner-strip">
+      <div class="container-fluid strip-inner">
+        <div class="strip-header">
+          <p class="strip-caption">Momentos de carinho, higiene e felicidade com nossos clientes</p>
+        </div>
+        <div class="strip-gallery-grid">
+          <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80" alt="Gato sob cuidados delicados">
+            <span class="gallery-tag">Cuidados Felinos</span>
+          </div>
+          <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=600&q=80" alt="Cão pequeno alegre">
+            <span class="gallery-tag">Banho Relaxante</span>
+          </div>
+          <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=600&q=80" alt="Cachorro elegante após tosa">
+            <span class="gallery-tag">Tosa Higiênica</span>
+          </div>
+          <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&q=80" alt="Filhote dócil recebendo carinho">
+            <span class="gallery-tag">Acolhimento Filhotes</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO PASSOS DO ATENDIMENTO (Fundo Claro com Ícones Elegantes) -->
+    <section class="process-section" id="processo">
+      <div class="container">
+        <div class="section-title-wrap text-center">
+          <span class="section-badge">Nosso Atendimento</span>
+          <h2 class="section-title">Etapas para o bem-estar completo do seu pet</h2>
+          <p class="section-subtitle">
+            Cada procedimento na L'AMOUR Pet Shop é planejado para que o animal se sinta seguro, confortável e acolhido em cada segundo.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <!-- Passo 1 -->
+          <div class="step-card">
+            <div class="step-icon-container">
+              <svg class="step-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+            <div class="step-number-badge">1</div>
+            <h3 class="step-title">Agendamento Fácil</h3>
+            <p class="step-desc">
+              Escolha o melhor dia e horário pelo WhatsApp sem complicação. Organizamos a agenda para evitar esperas longas na recepção.
+            </p>
+          </div>
+
+          <!-- Passo 2 -->
+          <div class="step-card">
+            <div class="step-icon-container">
+              <svg class="step-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <div class="step-number-badge">2</div>
+            <h3 class="step-title">Recepção Afetuosa</h3>
+            <p class="step-desc">
+              Acolhemos o pet com carinho e paciência. Avaliamos a pelagem, a pele e compreendemos as preferências individuais de cada um.
+            </p>
+          </div>
+
+          <!-- Passo 3 -->
+          <div class="step-card">
+            <div class="step-icon-container">
+              <svg class="step-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <div class="step-number-badge">3</div>
+            <h3 class="step-title">Banho & Estética</h3>
+            <p class="step-desc">
+              Utilizamos cosméticos veterinários hipoalergênicos, água em temperatura agradável e técnicas de tosa que valorizam a anatomia do animal.
+            </p>
+          </div>
+
+          <!-- Passo 4 -->
+          <div class="step-card">
+            <div class="step-icon-container">
+              <svg class="step-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="step-number-badge">4</div>
+            <h3 class="step-title">Retorno Seguro</h3>
+            <p class="step-desc">
+              Seu companheiro volta cheiroso, hidratado e relaxado para casa, pronto para receber seus abraços com a maior alegria.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO SERVIÇOS & CATÁLOGO -->
+    <section class="services-section" id="servicos">
+      <div class="container">
+        <div class="section-title-wrap text-center">
+          <span class="section-badge">Nossos Serviços</span>
+          <h2 class="section-title">Especialidades desenvolvidas para o conforto animal</h2>
+          <p class="section-subtitle">
+            Da higiene essencial aos tratamentos de hidratação e consultoria em nutrição e acessórios.
+          </p>
+        </div>
+
+        <div class="services-cards-grid">
+          <div class="service-card">
+            <div class="service-icon-bubble">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+              </svg>
+            </div>
+            <h3>Banho Terapêutico & Relaxante</h3>
+            <p>Higiene profunda com água controlada, produtos hipoalergênicos, toalhas esterilizadas e secagem silenciosa para reduzir qualquer estresse.</p>
+            <ul class="service-checklist">
+              <li>Limpeza de ouvidos preventiva</li>
+              <li>Corte e lixamento de unhas</li>
+              <li>Perfume suave e duradouro</li>
+            </ul>
+          </div>
+
+          <div class="service-card highlighted">
+            <div class="service-icon-bubble">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="6" cy="6" r="3"></circle>
+                <circle cx="6" cy="18" r="3"></circle>
+                <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+              </svg>
+            </div>
+            <div class="card-badge">Mais Procurado</div>
+            <h3>Tosa Especializada</h3>
+            <p>Tosa higiênica, tosa na tesoura e tosa da raça realizadas por profissionais atenciosos que preservam a beleza natural e a saúde da pelagem.</p>
+            <ul class="service-checklist">
+              <li>Tosa da raça e padrão estético</li>
+              <li>Tosa higiênica e desembolo gentil</li>
+              <li>Tosa bebê e tesoura artística</li>
+            </ul>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon-bubble">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+            </div>
+            <h3>Rações & Acessórios</h3>
+            <p>Seleção criteriosa de alimentos super premium, petiscos saudáveis, coleiras confortáveis, brinquedos e acessórios para o dia a dia.</p>
+            <ul class="service-checklist">
+              <li>Alimentos secos e úmidos premium</li>
+              <li>Camas, guias e peitorais seguros</li>
+              <li>Higiene bucal e estética em casa</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO EQUIPE / SOBRE NÓS (Estilo da Foto Profissional da Imagem 2) -->
+    <section class="about-team-section" id="sobre">
+      <div class="container about-container">
+        <div class="about-text-column">
+          <span class="section-badge">Compromisso e Amor</span>
+          <h2 class="section-title">Profissionais dedicados ao respeito e tranquilidade do seu animal</h2>
+          <p class="about-lead">
+            Na <strong>L'AMOUR Pet Shop</strong>, o nosso compromisso vai além da estética: entendemos a linguagem dos animais e proporcionamos uma experiência acolhedora.
+          </p>
+          <p class="about-body">
+            Cada cão ou gato possui seu próprio ritmo. Por isso, nossa equipe trabalha com técnicas de manejo gentil, paciência e atenção total aos sinais de conforto do seu amigo. Aqui, não há pressa nem medo: há cuidado genuíno.
+          </p>
+
+          <div class="about-features">
+            <div class="feature-row">
+              <div class="feature-dot"></div>
+              <span>Ambiente climatizado, higienizado e seguro</span>
+            </div>
+            <div class="feature-row">
+              <div class="feature-dot"></div>
+              <span>Cosméticos certificados e dermatologicamente testados</span>
+            </div>
+            <div class="feature-row">
+              <div class="feature-dot"></div>
+              <span>Atendimento humanizado e transparente com os tutores</span>
+            </div>
+          </div>
+
+          <div class="about-actions">
+            <a href="https://wa.me/5563992584940?text=Ol%C3%A1!+Gostaria+de+saber+mais+sobre+a+equipe+e+servi%C3%A7os+da+L'AMOUR." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Falar com Nossa Equipe
+            </a>
+            <a href="tel:63992584940" class="btn btn-secondary">
+              Ligar: (63) 99258-4940
+            </a>
+          </div>
+        </div>
+
+        <div class="about-visual-column">
+          <div class="about-image-card">
+            <div class="geometric-decor decor-top-right"></div>
+            <div class="geometric-decor decor-bottom-left"></div>
+            <img 
+              src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80" 
+              alt="Profissional cuidando com ternura de um animal de estimação" 
+              class="about-img"
+            >
+            <div class="experience-badge">
+              <span class="badge-num">100%</span>
+              <span class="badge-label">Dedicação ao Bem-estar Animal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DEPOIMENTOS / FEEDBACK (Fundo Marrom Sofisticado como na Imagem 2) -->
+    <section class="testimonial-section" id="depoimentos">
+      <div class="container testimonial-container">
+        <div class="testimonial-content">
+          <div class="testimonial-avatar-wrapper">
+            <img 
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=180&q=80" 
+              alt="Foto da cliente Helma Aguiar" 
+              class="testimonial-avatar"
+            >
+          </div>
+
+          <div class="rating-stars">
+            <svg class="star-icon" viewBox="0 0 24 24" fill="#E5A629"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24" fill="#E5A629"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24" fill="#E5A629"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24" fill="#E5A629"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24" fill="#E5A629"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+
+          <blockquote class="testimonial-quote">
+            "Único pet shop que não passou medo na July. Somos imensamente agradecidos pelo carinho, paciência e pelos cuidados dedicados a ela. O atendimento vai muito além do padrão!"
+          </blockquote>
+
+          <div class="testimonial-author">
+            <span class="author-name">Helma Aguiar</span>
+            <span class="author-role">Tutora da July • Cliente L'AMOUR</span>
+          </div>
+
+          <div class="testimonial-pagination">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO CONTATO & AGENDAMENTO -->
+    <section class="contact-callout-section" id="contato">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-info">
+            <span class="section-badge">Atendimento Rápido</span>
+            <h2 class="contact-title">Pronto para dar o melhor dia de cuidado ao seu pet?</h2>
+            <p class="contact-text">
+              Reserve um horário pelo nosso WhatsApp ou faça uma ligação. Estamos prontos para receber você e seu fiel escudeiro na 604 Norte.
+            </p>
+            <div class="contact-channel-list">
+              <div class="contact-channel-item">
+                <div class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <span class="channel-label">Telefone & WhatsApp</span>
+                  <a href="tel:63992584940" class="channel-value">(63) 99258-4940</a>
+                </div>
+              </div>
+
+              <div class="contact-channel-item">
+                <div class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <span class="channel-label">Localização</span>
+                  <span class="channel-value">604 Norte — Palmas, TO</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-cta-box">
+            <h3 class="cta-box-title">Agendamento Online</h3>
+            <p class="cta-box-desc">Converse diretamente com nossa recepção pelo WhatsApp e confirme a vaga do seu pet:</p>
+            <a href="https://wa.me/5563992584940?text=Ol%C3%A1!+Gostaria+de+marcar+um+hor%C3%A1rio+para+meu+pet+na+L'AMOUR." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block cta-main-btn">
+              Iniciar Conversa no WhatsApp
+            </a>
+            <div class="cta-guarantee">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E5A629" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <span>Atendimento personalizado e sem estresse</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ COMPLETO (Estilo Dark Marrom Escuro da Imagem 2) -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <div class="brand-logo footer-logo">
+          <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="19" stroke="#E5A629" stroke-width="2"/>
+            <path d="M14 26C14 26 13 22 17 19C17 19 14.5 15.5 17.5 13C20.5 10.5 22.5 13.5 22.5 13.5C22.5 13.5 25.5 10.5 28.5 13C31.5 15.5 29 19 29 19C33 22 32 26 32 26" stroke="#E5A629" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="17.5" cy="18.5" r="1.5" fill="#E5A629"/>
+            <circle cx="28.5" cy="18.5" r="1.5" fill="#E5A629"/>
+            <path d="M20.5 21L23 23.5L25.5 21" stroke="#E5A629" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="brand-text">
+            <span class="brand-title">L'AMOUR</span>
+            <span class="brand-subtitle">PET SHOP</span>
+          </div>
+        </div>
+        <p class="footer-about-text">
+          O lugar preferido do seu pet. Excelência em estética animal, banho, tosa, rações selecionadas e acessórios para elevar a qualidade de vida do seu companheiro.
+        </p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/petlamouroficial/" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="Instagram da Pet L'amour">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="https://wa.me/5563992584940" target="_blank" rel="noopener noreferrer" class="social-circle" aria-label="WhatsApp da Pet L'amour">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Nossos Serviços</h4>
+        <ul class="footer-nav-list">
+          <li><a href="#servicos">Estética Animal Completa</a></li>
+          <li><a href="#servicos">Banho & Hidratação</a></li>
+          <li><a href="#servicos">Tosa da Raça e Higiênica</a></li>
+          <li><a href="#servicos">Rações Super Premium</a></li>
+          <li><a href="#servicos">Acessórios Exclusivos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Navegação</h4>
+        <ul class="footer-nav-list">
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#processo">Como Cuidamos</a></li>
+          <li><a href="#sobre">Nossa Equipe</a></li>
+          <li><a href="#depoimentos">Avaliações de Clientes</a></li>
+          <li><a href="#contato">Agendar Horário</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col contact-footer-col">
+        <h4 class="footer-heading">Contato & Endereço</h4>
+        <div class="footer-contact-item">
+          <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <a href="tel:63992584940">(63) 99258-4940</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>604 Norte — Palmas, TO</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg class="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <span>Segunda a Sábado • Horário Comercial</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 L'AMOUR Pet Shop. Todos os direitos reservados.</p>
+        <p class="instagram-mention">Instagram oficial: <a href="https://www.instagram.com/petlamouroficial/" target="_blank" rel="noopener noreferrer">@petlamouroficial</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE DE WHATSAPP PARA MOBILE & DESKTOP -->
+  <a href="https://wa.me/5563992584940?text=Ol%C3%A1!+Gostaria+de+agendar+um+atendimento+na+L'AMOUR+Pet+Shop." class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Conversar no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="wa-icon">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+    </svg>
+    <span class="floating-label">Marcar Horário</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
