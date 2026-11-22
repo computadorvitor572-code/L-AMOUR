@@ -1,10 +1,29 @@
 /**
- * L'AMOUR PET SHOP - SCRIPTS DE INTERATIVIDADE E RESPONSIVIDADE
- * Feito com JavaScript moderno, sem dependências externas.
+ * L'AMOUR PET SHOP — SCRIPTS DE INTERATIVIDADE, VÍDEO HERO E ANIMAÇÕES SUAVES
+ * Feito com JavaScript moderno, sem dependências externas e sem emojis.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Menu Mobile Drawer
+  // 1. Controle de Reprodução do Vídeo na Hero (Garante Autoplay em Background)
+  const heroVideo = document.querySelector('.hero-video-bg');
+  if (heroVideo) {
+    heroVideo.muted = true;
+    const playPromise = heroVideo.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Fallback de interação caso o navegador bloqueie autoplay
+        const startVideoOnInteraction = () => {
+          heroVideo.play();
+          document.removeEventListener('touchstart', startVideoOnInteraction);
+          document.removeEventListener('click', startVideoOnInteraction);
+        };
+        document.addEventListener('touchstart', startVideoOnInteraction, { once: true });
+        document.addEventListener('click', startVideoOnInteraction, { once: true });
+      });
+    }
+  }
+
+  // 2. Menu Mobile Drawer
   const mobileToggle = document.getElementById('mobileToggle');
   const drawerClose = document.getElementById('drawerClose');
   const mobileDrawer = document.getElementById('mobileDrawer');
@@ -38,17 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 2. Mudança de fundo do Header ao rolar a página
+  // 3. Mudança de fundo do Header ao rolar a página
   const header = document.getElementById('header');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
+    if (window.scrollY > 50) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
-  });
+  }, { passive: true });
 
-  // 3. Highlight dos links da navegação de acordo com a seção visível
+  // 4. Highlight dos links da navegação de acordo com a seção visível
   const sections = document.querySelectorAll('section[id]');
   const desktopLinks = document.querySelectorAll('.desktop-nav .nav-links a');
 
@@ -57,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(current => {
       const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 120;
+      const sectionTop = current.offsetTop - 140;
       const sectionId = current.getAttribute('id');
 
       if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
@@ -71,9 +90,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  window.addEventListener('scroll', highlightNavOnScroll);
+  window.addEventListener('scroll', highlightNavOnScroll, { passive: true });
 
-  // 4. Carrossel de Depoimentos Interativo
+  // 5. Scroll Reveal Suave (Intersection Observer)
+  const revealElements = document.querySelectorAll('.reveal');
+  
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  } else {
+    revealElements.forEach(el => el.classList.add('is-visible'));
+  }
+
+  // 6. Carrossel de Depoimentos Interativo
   const testimonials = [
     {
       avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=180&q=80",
@@ -107,9 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
     currentTestimonialIndex = index;
     const t = testimonials[index];
 
-    // Transição suave
     quoteEl.style.opacity = '0';
-    quoteEl.style.transform = 'translateY(10px)';
+    quoteEl.style.transform = 'translateY(8px)';
 
     setTimeout(() => {
       avatarImg.src = t.avatar;
@@ -133,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Troca automática de depoimento a cada 7 segundos
+  // Rotação suave a cada 7 segundos
   setInterval(() => {
     const nextIndex = (currentTestimonialIndex + 1) % testimonials.length;
     updateTestimonial(nextIndex);
