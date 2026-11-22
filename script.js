@@ -1,17 +1,49 @@
 /**
- * L'AMOUR PET SHOP — SCRIPTS DE INTERATIVIDADE, VÍDEO HERO E ANIMAÇÕES SUAVES
+ * L'AMOUR PET SHOP — SCRIPTS DE INTERATIVIDADE, TEMA CLARO/ESCURO E VÍDEO HERO
  * Feito com JavaScript moderno, sem dependências externas e sem emojis.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Controle de Reprodução do Vídeo na Hero (Garante Autoplay em Background)
+  // 1. Alternador Discreto de Modo Claro / Escuro (Theme Toggle)
+  const htmlEl = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  const drawerThemeToggle = document.getElementById('drawerThemeToggle');
+  const themeTextIndicator = document.querySelector('.theme-text-indicator');
+
+  // Recupera o tema salvo ou usa 'dark' como padrão cinematográfico
+  const savedTheme = localStorage.getItem('lamour_theme') || 'dark';
+  
+  const applyTheme = (theme) => {
+    htmlEl.setAttribute('data-theme', theme);
+    localStorage.setItem('lamour_theme', theme);
+
+    if (themeTextIndicator) {
+      themeTextIndicator.textContent = theme === 'dark' ? 'Modo Claro' : 'Modo Escuro';
+    }
+
+    if (themeToggle) {
+      themeToggle.setAttribute('title', theme === 'dark' ? 'Ativar Modo Claro' : 'Ativar Modo Escuro');
+    }
+  };
+
+  applyTheme(savedTheme);
+
+  const toggleTheme = () => {
+    const currentTheme = htmlEl.getAttribute('data-theme') || 'dark';
+    const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(nextTheme);
+  };
+
+  if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+  if (drawerThemeToggle) drawerThemeToggle.addEventListener('click', toggleTheme);
+
+  // 2. Controle de Reprodução do Vídeo na Hero
   const heroVideo = document.querySelector('.hero-video-bg');
   if (heroVideo) {
     heroVideo.muted = true;
     const playPromise = heroVideo.play();
     if (playPromise !== undefined) {
       playPromise.catch(() => {
-        // Fallback de interação caso o navegador bloqueie autoplay
         const startVideoOnInteraction = () => {
           heroVideo.play();
           document.removeEventListener('touchstart', startVideoOnInteraction);
@@ -23,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 2. Menu Mobile Drawer
+  // 3. Menu Mobile Drawer
   const mobileToggle = document.getElementById('mobileToggle');
   const drawerClose = document.getElementById('drawerClose');
   const mobileDrawer = document.getElementById('mobileDrawer');
@@ -50,24 +82,23 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', closeDrawer);
   });
 
-  // Fechar com a tecla ESC
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileDrawer.classList.contains('open')) {
       closeDrawer();
     }
   });
 
-  // 3. Mudança de fundo do Header ao rolar a página
+  // 4. Mudança de fundo do Header ao rolar a página
   const header = document.getElementById('header');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 40) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
   }, { passive: true });
 
-  // 4. Highlight dos links da navegação de acordo com a seção visível
+  // 5. Highlight dos links da navegação de acordo com a seção visível
   const sections = document.querySelectorAll('section[id]');
   const desktopLinks = document.querySelectorAll('.desktop-nav .nav-links a');
 
@@ -92,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', highlightNavOnScroll, { passive: true });
 
-  // 5. Scroll Reveal Suave (Intersection Observer)
+  // 6. Scroll Reveal Suave (Intersection Observer)
   const revealElements = document.querySelectorAll('.reveal');
   
   if ('IntersectionObserver' in window) {
@@ -105,8 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, {
       root: null,
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.1,
+      rootMargin: '0px 0px -30px 0px'
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
@@ -114,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => el.classList.add('is-visible'));
   }
 
-  // 6. Carrossel de Depoimentos Interativo
+  // 7. Carrossel de Depoimentos Interativo
   const testimonials = [
     {
       avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=180&q=80",
@@ -173,7 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Rotação suave a cada 7 segundos
   setInterval(() => {
     const nextIndex = (currentTestimonialIndex + 1) % testimonials.length;
     updateTestimonial(nextIndex);

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>L'AMOUR | Pet Shop & Estética Animal</title>
   <meta name="description" content="L'AMOUR Pet Shop - O lugar preferido do seu pet. Estética animal especializada, banho relaxante, tosa técnica, rações e acessórios em Palmas - 604 Norte. Telefone: (63) 99258-4940.">
   
-  <!-- Fontes Google: Cormorant Garamond / Playfair Display (Serif Editorial de Luxo) & Plus Jakarta Sans (Tipografia Editorial Neutra) -->
+  <!-- Fontes Google: Cormorant Garamond / Playfair Display & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -49,8 +49,29 @@
           Agendar Horário
         </a>
 
-        <!-- Botão Menu Hamburguer Mobile -->
+        <!-- Alternador Discreto de Modo Claro / Escuro (à direita de Agendar Horário) -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar modo claro ou escuro" title="Alternar tema">
+          <!-- Ícone do Sol (aparece quando no modo escuro) -->
+          <svg class="theme-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Ícone da Lua (aparece quando no modo claro) -->
+          <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Botão Menu Hamburguer Mobile (3 listras) -->
         <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menu de navegação">
+          <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
           <span class="hamburger-bar"></span>
         </button>
@@ -80,6 +101,27 @@
         <li><a href="#contato" class="mobile-link">Contato</a></li>
       </ul>
       <div class="mobile-drawer-footer">
+        <!-- Linha Discreta de Tema no Menu Mobile -->
+        <div class="drawer-theme-row">
+          <span class="drawer-theme-label">Aparência</span>
+          <button class="drawer-theme-toggle" id="drawerThemeToggle" aria-label="Alternar tema">
+            <svg class="theme-icon-mini icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="theme-icon-mini icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <span class="theme-text-indicator">Modo Claro</span>
+          </button>
+        </div>
         <div class="drawer-meta-block">
           <span class="drawer-label">Central de Agendamento</span>
           <a href="tel:63992584940" class="drawer-phone-link">(63) 99258-4940</a>
